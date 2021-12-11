@@ -12,7 +12,7 @@ export const filmAction = () => {
             arrFilm: result.data.content,
           });
         } catch (errors) {
-          console.log("errors", errors);
+          // console.log("errors", errors);
         }
       };
 }

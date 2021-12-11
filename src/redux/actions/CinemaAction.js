@@ -14,7 +14,7 @@ export const cinemaListAction = () => {
                 })
             }
         }catch (errors) {
-            console.log ('errors', errors.response?.data)
+            // console.log ('errors', errors.response?.data)
         }
     }
 }

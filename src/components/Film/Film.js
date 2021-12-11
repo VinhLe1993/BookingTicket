@@ -17,7 +17,7 @@ export default function Film(props) {
           {film.tenPhim}
         </h1>
         <p className="leading-relaxed mb-3">
-         {film.moTa.length > 100 ? <span>{film.moTa.slice(0,100)} ...</span> : <span>{film.moTa}</span>}
+         {film.moTa.length > 50 ? <span>{film.moTa.slice(0,50)} ...</span> : <span>{film.moTa}</span>}
         </p>
         <div className="flex items-center flex-wrap ">
           <a className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0">

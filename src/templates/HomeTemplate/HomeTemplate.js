@@ -11,7 +11,7 @@ export const HomeTemplate = (props) => {
     return <Route {...restProps} render={(propsRoute) => {
         return <Fragment>
             <Header {...propsRoute}/>
-            <HomeCarousel {...propsRoute} />
+            
             <Component {...propsRoute} />
             <Footer />
         </Fragment>

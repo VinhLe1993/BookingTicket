@@ -5,6 +5,8 @@ import { useSelector, useDispatch } from "react-redux";
 import MultipleRows from "../../components/RSlick/MultiRowSlick";
 import { filmAction } from "../../redux/actions/FilmAction";
 import { cinemaListAction } from "../../redux/actions/CinemaAction";
+import HomeCarousel from "../../templates/HomeTemplate/Layout/HomeCarousel/HomeCarousel";
+
 
 export default function Home(props) {
   const { arrFilm } = useSelector((state) => state.FilmReducer);
@@ -27,6 +29,7 @@ export default function Home(props) {
 
   return (
     <div className="container mx-auto">
+      <HomeCarousel />
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto h-auto">
           <MultipleRows arrFilm={arrFilm} />

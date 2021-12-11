@@ -1,6 +1,8 @@
 import React from "react";
 import "./FlipCard_Film.css";
 import {PlayCircleOutlined} from '@ant-design/icons'
+import { NavLink } from "react-router-dom";
+
 
 export default function FlipCard_Film(props) {
   const { film } = props;
@@ -26,7 +28,7 @@ export default function FlipCard_Film(props) {
           <div className="w-full h-full absolute bg-opacity-70 bg-gray-900 flex flex-col justify-center items-center">
             <h1 className="text-white flex text-lg font-semibold">{film.tenPhim}</h1>
             <div className="rounded-full cursor-pointer"><PlayCircleOutlined style={{fontSize:"50px"}}/></div>
-            <button className="text-lg font-semibold rounded-lg bg-green-400 px-5 py-0.5 mt-5">Đặt vé</button>
+            <NavLink to={`/detail/${film.maPhim}`} className="text-lg font-semibold rounded-lg bg-green-400 px-5 py-0.5 mt-5">Đặt vé</NavLink>
           </div>
         </div>
       </div>

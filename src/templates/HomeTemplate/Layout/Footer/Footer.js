@@ -1,6 +1,16 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import _ from "lodash";
 
 export default function Footer() {
+  const { arrCinema } = useSelector((state) => state.CinemaReducer);
+
+  const arrCinemaList = _.map(arrCinema, (cinemaList) =>
+    _.pick(cinemaList, ["maHeThongRap", "tenHeThongRap", "logo"])
+  );
+
+  // console.log ('arr', arrCinemaList)
+
   return (
     <footer className="text-gray-600 body-font bg-gray-200 mt-10">
       <div className="container px-5 py-24 mx-auto">
@@ -45,22 +55,15 @@ export default function Footer() {
           </div>
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
             <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
-              CATEGORIES
+              PARTNER
             </h2>
-            <nav className="list-none mb-10">
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">First Link</a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">Second Link</a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">Third Link</a>
-              </li>
-              <li>
-                <a className="text-gray-600 hover:text-gray-800">Fourth Link</a>
-              </li>
-            </nav>
+            <div className="grid grid-cols-3">
+              {arrCinemaList.map((cineLst, index)=>{
+                return <div key={index} className="mb-2">
+                <img src={cineLst.logo} className="w-8"/>
+              </div>
+              })}
+            </div>
           </div>
           <div className="lg:w-1/4 md:w-1/2 w-full px-4">
             <h2 className="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">
