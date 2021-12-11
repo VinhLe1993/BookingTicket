@@ -1,0 +1,1 @@
+export const SET_FILMLIST = "SET_FILMLIST"

@@ -1,0 +1,1 @@
+export const SET_CINEMA_LIST = "SET_CINEMA_LIST";
