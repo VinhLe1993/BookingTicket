@@ -1,1 +1,2 @@
 export const SET_CINEMA_LIST = "SET_CINEMA_LIST";
+export const SET_FILM_DETAIL = "SET_FILM_DETAIL";

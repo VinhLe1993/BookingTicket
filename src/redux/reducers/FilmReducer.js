@@ -1,3 +1,4 @@
+import { SET_FILM_DETAIL } from "../actions/types/CinemaType";
 import { SET_FILMLIST } from "../actions/types/FilmType";
 
 const stateDefault = {
@@ -17,12 +18,18 @@ const stateDefault = {
       sapChieu: true,
     },
   ],
+  filmDetail: {},
 };
 
 export const FilmReducer = (state = stateDefault, action) => {
   switch (action.type) {
     case SET_FILMLIST: {
-      state.arrFilm = action.arrFilm
+      state.arrFilm = action.arrFilm;
+      return { ...state };
+    }
+
+    case SET_FILM_DETAIL: {
+      state.filmDetail = action.filmDetail;
       return { ...state };
     }
 

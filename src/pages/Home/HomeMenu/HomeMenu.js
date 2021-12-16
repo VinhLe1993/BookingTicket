@@ -37,7 +37,7 @@ export default function HomeMenu(props) {
                   }
                   key={index}
                 >
-                  {cinema.danhSachPhim.slice(0,5).map((film, index) => {
+                  {cinema.danhSachPhim.slice(0,8).map((film, index) => {
                     return (
                       <Fragment key={index}>
                         <div  className="flex my-4">
@@ -51,7 +51,7 @@ export default function HomeMenu(props) {
                             <h1 className="text-xl text-indigo-600">{film.tenPhim}</h1>
                             <p className="text-gray-400 font-semibold">{cinema.diaChi}</p>
                             <div className="grid grid-cols-6 gap-8">
-                            {film.lstLichChieuTheoPhim?.slice(0,10).map((showingDate,index)=>{
+                            {film.lstLichChieuTheoPhim?.slice(0,12).map((showingDate,index)=>{
                               return <NavLink to="/" className="border-solid border border-indigo-600 px-3 py-1 rounded-lg text-base text-indigo-400">
                                 {moment(showingDate.ngayChieuGioChieu).format('hh:mm A')}
                               </NavLink>

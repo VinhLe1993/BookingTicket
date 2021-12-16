@@ -25,7 +25,7 @@ export default function Home(props) {
     const action = filmAction();
     dispatch(action);
     dispatch(cinemaListAction())
-  });
+  },[]);
 
   return (
     <div className="container mx-auto">

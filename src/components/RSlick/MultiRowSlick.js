@@ -30,7 +30,7 @@ function SamplePrevArrow(props) {
 
 const MultipleRows = (props) => {
   const renderFilm = () => {
-    return props.arrFilm.slice(0, 10).map((item, index) => {
+    return props.arrFilm.slice(0, 16).map((item, index) => {
       return (
         <div key={index}>
           <FlipCard_Film film={item} />

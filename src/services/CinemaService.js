@@ -9,7 +9,10 @@ export class CinemaService  extends baseService {
     cinemaList = () => {
         return this.get(`/api/QuanLyRap/LayThongTinLichChieuHeThongRap?maNhom=${GROUPID}`)
     }
-    
+
+    filmDetailList = (filmID) => {
+        return this.get(`/api/QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${filmID}`)
+    }
 }
 
 export const cinemaService = new CinemaService()
