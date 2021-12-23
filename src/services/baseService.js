@@ -1,5 +1,5 @@
 import Axios from "axios";
-import {TOKEN_CYBERSOFT_MOVIE} from "../util/settings/config"
+import {TOKEN, TOKEN_CYBERSOFT_MOVIE} from "../util/settings/config"
 import {DOMAIN} from "../util/settings/config"
 // import {TOKEN} from "../util/settings/config"
 
@@ -14,14 +14,17 @@ export class baseService {
 //       })
 //   }
 
-//   post = (url,model) => {
-//       return axios({
-//           url: `${DOMAIN}/${url}`,
-//           method: 'POST',
-//           data:model,
-//           Headers: {'Authorization': 'Bearer ' + localStorage.getItem(TOKEN)}
-//       })
-//   }
+  post = (url,model) => {
+      return Axios({
+          url: `${DOMAIN}/${url}`,
+          method: 'POST',
+          data:model,
+          headers: {
+            TokenCybersoft: TOKEN_CYBERSOFT_MOVIE,
+            Authorization: "Bearer" + localStorage.getItem(TOKEN),
+          },
+      })
+  }
 
   get = (url) => {
     return Axios({
@@ -29,6 +32,7 @@ export class baseService {
         method: 'GET',
         headers: {
             TokenCybersoft: TOKEN_CYBERSOFT_MOVIE,
+            Authorization: "Bearer" + localStorage.getItem(TOKEN),
           },
     })
 } 

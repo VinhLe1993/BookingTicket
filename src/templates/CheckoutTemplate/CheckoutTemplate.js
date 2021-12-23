@@ -6,9 +6,7 @@ import { Redirect } from "react-router-dom";
 const CheckoutTemplate = (props) => {
   const { Component, ...restProps } = props;
 
-  if (!localStorage.getItem(USER_LOGIN)) {
-    return <Redirect to="login" />;
-  }
+  
 
   return (
     <Route

@@ -1,0 +1,26 @@
+/* Ghế thường  */
+.seat {
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 15px;
+    background-color: #e2e2e2;
+  }
+  
+  /* Ghế đã đặt */
+  .bookedSeat {
+    background-color: #ff665e;
+    cursor: no-drop;
+  }
+  
+  /* Ghế đang đặt */
+  .bookingSeat {
+    background-color: #ffa84c !important; 
+  }
+  
+  /* Ghế vip */
+  .vipSeat {
+    background-color: #68c858;
+  }

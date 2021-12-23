@@ -123,7 +123,7 @@ export default function Detail(props) {
                       </div>
                       <div className="grid grid-cols-4">
                         {cine.lichChieuPhim?.slice(0,12).map((date,index) => {
-                          return <NavLink to="/" key={index} className="col-span-1 text-indigo-600 mt-3 font-semibold">
+                          return <NavLink to={`/checkout/${date.maLichChieu}`} key={index} className="col-span-1 text-indigo-600 mt-3 font-semibold">
                               {moment(date.lichChieuGioChieu).format('hh:mm A')}
                           </NavLink>
                         })}
