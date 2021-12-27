@@ -7,8 +7,10 @@ import { loginAction } from "../../redux/actions/UserAction";
 export default function Login(props) {
   const dispatch = useDispatch();
 
-  // const {userLogin} = useSelector(state=>state.userReducer)
+//   const {userLogin} = useSelector(state=>state.UserReducer)
 
+// console.log ('userLogin',userLogin)
+  
   const formik = useFormik({
     initialValues: {
       taiKhoan: "",

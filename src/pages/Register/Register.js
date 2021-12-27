@@ -1,11 +1,10 @@
 import React from "react";
-import { useFormik, ErrorMessage } from "formik";
+import { useFormik } from "formik";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { signInAction } from "../../redux/actions/UserAction";
 
 import * as yup from "yup";
-
 
 
 export default function Register(props) {
@@ -41,15 +40,15 @@ export default function Register(props) {
         .email("Invalid email format !"),
       soDt: yup
         .string()
-        
+
         .required("Required !"),
     }),
     onSubmit: (data) => {
-        const action = signInAction(data);
-        dispatch(action);
-       
+      const action = signInAction(data);
+      dispatch(action);
+     
 
-      console.log("data", data);
+      // console.log("data", data);
     },
   });
   return (
@@ -116,7 +115,9 @@ export default function Register(props) {
                 placeholder="Enter your account"
               />
               {formik.errors.taiKhoan && formik.touched.taiKhoan && (
-                <p className="mt-2 text-base text-red-400">{formik.errors.taiKhoan}</p>
+                <p className="mt-2 text-base text-red-400">
+                  {formik.errors.taiKhoan}
+                </p>
               )}
             </div>
             <div>
@@ -131,7 +132,9 @@ export default function Register(props) {
                 placeholder="Enter your Password"
               />
               {formik.errors.matKhau && formik.touched.matKhau && (
-                <p className="mt-2 text-base text-red-400">{formik.errors.matKhau}</p>
+                <p className="mt-2 text-base text-red-400">
+                  {formik.errors.matKhau}
+                </p>
               )}
             </div>
             <div>
@@ -146,7 +149,9 @@ export default function Register(props) {
                 placeholder="Enter your Email"
               />
               {formik.errors.email && formik.touched.email && (
-                <p className="mt-2 text-base text-red-400">{formik.errors.email}</p>
+                <p className="mt-2 text-base text-red-400">
+                  {formik.errors.email}
+                </p>
               )}
             </div>
             <div>
@@ -155,13 +160,15 @@ export default function Register(props) {
               </div>
               <input
                 name="soDt"
-                type="text"
+                type="number"
                 onChange={formik.handleChange}
                 className="w-full text-lg py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500"
                 placeholder="Enter your Phone Number"
               />
               {formik.errors.soDt && formik.touched.soDt && (
-                <p className="mt-2 text-base text-red-400">{formik.errors.soDt}</p>
+                <p className="mt-2 text-base text-red-400">
+                  {formik.errors.soDt}
+                </p>
               )}
             </div>
             <div>
@@ -176,7 +183,9 @@ export default function Register(props) {
                 placeholder="Enter your Fullname"
               />
               {formik.errors.hoTen && formik.touched.hoTen && (
-                <p className="mt-2 text-base text-red-400">{formik.errors.hoTen}</p>
+                <p className="mt-2 text-base text-red-400">
+                  {formik.errors.hoTen}
+                </p>
               )}
             </div>
 

@@ -1,4 +1,5 @@
 import { bookingService } from "../../services/BookingService";
+import { TicketInfo } from "../../_core/models/TicketInfo";
 import {SET_BOOKING_DETAIL} from "./types/BookingType"
 
 export const bookingAction = (bookingID) => {
@@ -18,3 +19,14 @@ export const bookingAction = (bookingID) => {
     }
   };
 };
+
+export const bookingTicketAction = (ticketInfo = new TicketInfo()) => {
+  return async dispatch => {
+    try {
+      const result = await bookingService.bookingTicket(ticketInfo)
+      console.log (result.data.content)
+    } catch (errors) {
+      console.log (errors.response.data)
+    }
+  }
+}
